@@ -9,7 +9,7 @@ let containerc=container.getBoundingClientRect();
 
 
 
-
+console.log(containerc);
 
 
 
@@ -23,13 +23,21 @@ face.innerHTML='<i class="fa-solid fa-face-grin-squint-tears"></i>'
 
 
 
-nobtn.addEventListener('mousemove', ()=>{
-    let i =Math.floor(Math.random()*300)+50;
+nobtn.addEventListener('mousemove', function test(){
+    
+    let i =Math.floor(Math.random()*containerc.right);
+    
+
     let j =Math.floor(Math.random()*200)+200;
-    console.log(j);
+    console.log(i);
+    if(i>containerc.left && i<containerc.right-100){
     nobtn.style.left=i+'px';
-    nobtn.style.top=j+'px';
+    nobtn.style.top=j+'px';}
+    else{
+   test();
+    }
     })
+
 
 
 
