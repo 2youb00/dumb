@@ -30,7 +30,7 @@ nobtn.addEventListener('mousemove', function test(){
 
     let j =Math.floor(Math.random()*200)+200;
     console.log(i);
-    if(i>containerc.left && i<containerc.right-100){
+    if(i>containerc.left+100 && i<containerc.right-100){
     nobtn.style.left=i+'px';
     nobtn.style.top=j+'px';}
     else{
