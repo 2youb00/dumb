@@ -9,10 +9,13 @@ box-sizing: border-box;
 }
 body{
     display: flex;
+    flex-direction: column;
     justify-content:center ;
     align-items: center;
     min-height: 100vh;
+    background: url('layered-steps-haikei.svg') center/cover no-repeat;
     background-color: #7d2ae8;
+    overflow: hidden;
 }
 .container{
     width: 600px;
@@ -26,7 +29,7 @@ body{
 }
 i{
     color: #7d2ae8;
-    font-size: 7.5em;
+    font-size: 7.5rem;
     background-color:white ;
     border-radius: 50%;
     border: 5px solid transparent;
@@ -35,7 +38,7 @@ i{
 }
 h2{
     color: #7d2ae8;
-    font-size: 3em;
+    font-size:3rem;
     margin: 15px 0;
 }
 .btns{
@@ -66,3 +69,85 @@ button{
     color: #7d2ae8;
     margin-right: -200px;
 }
+@media screen and  (max-width:450px){
+    .container{
+        width: 320px;
+        height: 290px;
+    }
+    h2{
+        font-size: 150%;
+    }
+    i{
+        font-size:600% ;
+    }
+    button{
+        width: 100px;
+        font-size: 1rem;
+    }
+    #yesbtn{
+        margin-left: -150px;
+    }
+    #nobtn{
+        margin-right: -150px;
+    }
+}
+/*------------------------cahnge lang------/*/
+.radio-input input {
+    display: none;
+  }
+  
+  .radio-input {
+    --container_width: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius:10px ;
+    background-color: #fff;
+    color: #000000;
+    width: var(--container_width);
+    overflow: hidden;
+    border: 1px solid rgba(53, 52, 52, 0.226);
+  }
+  
+  .radio-input label {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+  }
+  
+  .selection {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: calc(var(--container_width) / 2);
+    z-index: 0;
+    left: 0;
+    top: 0;
+    transition: .15s ease;
+  }
+  
+  .radio-input label:has(input:checked) {
+    color: #fff;
+  }
+  
+  .radio-input label:has(input:checked) ~ .selection {
+    background-color: #7d2ae8;
+    display: inline-block;
+  }
+  
+  .radio-input label:nth-child(1):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 0/2));
+  }
+  
+  .radio-input label:nth-child(2):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 1/2));
+  }
+  
