@@ -51,17 +51,19 @@ yesbtn.addEventListener('click',()=>{
 
 
 
+
 nobtn.addEventListener('mousemove', function test(){
     
-    let i =Math.floor(Math.random()*containerc.right);
+    let i =Math.floor(Math.random()*1000);
     
 
-    let j =Math.floor(Math.random()*200)+200;
-    console.log(i);
-    if(i>containerc.left && i<containerc.right-100){
+    let j =Math.floor(Math.random()*1000);
+    if(containerc.right >(i+130) && containerc.left<i && containerc.bottom>(j+130)   && containerc.top<j ){
+        console.log("i:",i,"j:",j);
     nobtn.style.left=i+'px';
     nobtn.style.top=j+'px';}
     else{
+        console.log('else');
    test();
     }
     })
@@ -73,6 +75,30 @@ nobtn.addEventListener('mousemove', function test(){
  let j =Math.floor(Math.random()*(containerc.height))-1;
  nobtn.style.left=i+'px';
  nobtn.style.top=j+'px';
+ && containerc.height>(containerc.top+j)
+ && i<containerc.right-100
+ && container.top &&
+
+
+
+
+
+
+
+
+   let i =Math.floor(Math.random()*1000);
+    
+
+    let j =Math.floor(Math.random()*1000);
+    if(containerc.width>(containerc.left+i) && containerc.height>(containerc.top+j)){
+        console.log(j);
+    nobtn.style.left=containerc.left+i+'px';
+    nobtn.style.top=containerc.top+j+'px';}
+    else{
+        console.log('else');
+   test();
+    }
+    })
  })*/
 
 
